@@ -1,0 +1,40 @@
+header {
+  background-color: #fff;
+  padding: 1em;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  height: 15vh; /* Keeps height relative to the viewport height */
+}
+
+.logo-container {
+  flex: 0 0 10vw; /* Sets width relative to the viewport width */
+}
+
+.logo {
+  width: 100%; /* Make the logo fill its container */
+  height: auto;
+}
+
+.search-container {
+  flex: 1;
+  text-align: center;
+}
+
+.search-bar {
+  width: 70%; /* Adjust the width as needed */
+  padding: 0.5em;
+}
+
+.search-button {
+  margin-left: 1vw; /* Use vw for horizontal spacing */
+  padding: 0.5em 1em; /* Use em for padding, scales with font size */
+  border: none;
+  border-radius: 0.25em; /* Use em for border-radius, scales with font size */
+  background-color: orange; /* Change the color if needed */
+  color: white;
+  cursor: pointer;
+  font-size: 1em; /* Use em to scale with the global font size */
+}

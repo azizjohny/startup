@@ -1,0 +1,122 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.container {
+  background-color: #fff;
+  padding: 1.25rem; /* Use rem for padding */
+  border-radius: 0.3125rem; /* Use rem for border radius */
+  margin: 0 1.25rem 1.25rem 0; /* Use rem for margin */
+}
+
+/* Style for the header of each container */
+h2 {
+  color: #333; /* Set header text color */
+}
+
+/* Style for individual store, brand, and category items */
+.store-item,
+.brand-item,
+.product-item,
+.item {
+  position: relative;
+  overflow: hidden;
+  padding: 0.625rem; /* Use rem for padding */
+  cursor: pointer;
+  height: 100%; /* Set a fixed height for all product cards */
+}
+
+/* Style for the images inside items */
+.store-item img,
+.brand-item img,
+.product-item img,
+.item img {
+  width: 100%;
+  height: auto; /* Use auto for responsive height */
+  object-fit: cover; /* Use cover to maintain aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Style for the text (name, brand, etc.) inside items */
+.item-info {
+  bottom: 0; /* Place at the bottom of the container */
+  left: 0; /* Place at the left of the container */
+  width: 100%; /* Take up the full width */
+  text-align: center; /* Center text horizontally */
+}
+
+/* Style for the item name */
+.item-name {
+  color: black; /* Change text color to black */
+  font-weight: bold;
+  margin-bottom: 0.3125rem; /* Use rem for margin */
+  max-height: 2.5em; /* Set a maximum height for the item name */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  font-size: 1.5em; /* Set an initial font size */
+  transition: font-size 0.2s; /* Add a transition for smooth scaling */
+}
+
+
+/* Style for the item price */
+.item-price {
+  color: orange; /* Change text color to orange */
+  font-size: 1.2em; /* Use em for font size */
+}
+
+/* Style for individual items inside the Popular Categories container */
+.item {
+  margin-bottom: 1.25rem; /* Use rem for margin */
+}
+
+/* Style for the Popular Categories header */
+.category-item h3 {
+  color: #333; /* Set header text color */
+  margin-bottom: 0.625rem; /* Use rem for margin */
+}
+
+/* Style for the image container */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  height: 80%; /* Keep relative height */
+}
+
+.scroll-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em; /* Use em for font size */
+  cursor: pointer;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.3125rem; /* Use rem for border radius */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+  line-height: 1; /* Set line-height to 1 to center vertically within the background */
+}
+
+/* Style for left scroll arrow */
+.left-arrow {
+  left: 0;
+}
+
+/* Style for right scroll arrow */
+.right-arrow {
+  right: 0;
+}
+
+/* Show arrows on hover */
+.container:hover .scroll-arrows {
+  opacity: 1;
+}
+
+/* Non-selectable */
+.container,
+.item-info,
+.item-info,
+.container a {
+  user-select: none;
+  text-decoration: none;
+}

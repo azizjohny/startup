@@ -1,0 +1,126 @@
+/* src/LeftSidebar.css */
+
+/* Apply border-box model to all elements for consistent sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* General Styles */
+.left-sidebar {
+  display: flex; /* Sidebar and details-pane side by side */
+  flex-direction: row; /* Align children horizontally */
+  position: relative; /* For positioning of absolute children */
+  width: 20vw; /* Use viewport width for responsiveness */
+  overflow-wrap: break-word; /* Breaks words to prevent overflow */
+}
+
+.sidebar-container {
+  background-color: #fff;
+  color: #000;
+  width: 100%; /* Adjust as needed */
+  box-sizing: border-box;
+  z-index: 2; /* Ensures that the sidebar is above the details pane */
+  overflow-wrap: break-word; /* Breaks words to prevent overflow */
+}
+
+.sidebar-container a, .category-details-pane a {
+  text-decoration: none; /* Remove text decoration */
+  color: black;
+  font-size: 0.9em; /* Use em for font-size */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  display: block; /* Ensures the link takes the full space of li */
+  white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+.sidebar-container a:hover, .category-details-pane a:hover, .main-category:hover {
+  color: orange; /* Orange color on hover for all links and main categories */
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  font-size: 0.9em; /* Use em for font-size */
+  overflow-wrap: break-word; /* Breaks words to prevent overflow */
+}
+
+.main-category {
+  padding: 0.5em 1em; /* Use em for padding */
+  z-index: 3; /* Ensures it's above the pseudo-element */
+  overflow-wrap: break-word; /* Breaks words to prevent overflow */
+}
+
+.category-details-pane {
+  position: absolute;
+  top: 2.5em; /* Consider using rem for consistent scaling */
+  left: 20vw; /* Use viewport width */
+  width: 100%; /* Use viewport width for responsiveness */
+  box-sizing: border-box;
+  height: calc(100% - 2.5em); /* Consider using rem for consistent scaling */
+  background: white; /* Adjust color as needed */
+  overflow-y: auto; /* In case of overflow */
+  z-index: 1; /* Lower than .left-sidebar to ensure it's behind */
+  transition: transform 0.6s ease-in-out, visibility 0.6s ease-in-out; /* Smooth transition for sliding and visibility */
+  transform: translateX(-20vw); /* Start hidden to the left of the sidebar, using viewport width */
+}
+
+.category-details-pane.open {
+  transform: translateX(0); /* Slide in */
+}
+
+.category-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-group li {
+  padding: 0.5em 1em; /* Use em for padding */
+  overflow-wrap: break-word; /* Breaks words to prevent overflow */
+}
+
+.category-group li a {
+  text-decoration: none; /* Remove text decoration */
+  color: #333;
+  display: block; /* Make the links fill the li for better clickability */
+  font-size: 0.85em; /* Use em for font-size, slightly smaller */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  white-space: nowrap; /* Prevents the text from wrapping */
+}
+
+.category-group li a:hover {
+  color: #000;
+  background-color: #e9e9e9; /* Optional: Adds a hover effect to the links */
+}
+/* Media query for small screens (e.g., tablets or small desktops) */
+@media (max-width: 768px) {
+  .left-sidebar {
+    width: 30vw; /* Adjust the width for small screens */
+  }
+  
+  .category-details-pane {
+    left: 30vw; /* Align with the width of .left-sidebar */
+    width: 100%; /* Keep the width at 100% of the parent element */
+    transform: translateX(-30vw); /* Hide completely to the left */
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+  .left-sidebar {
+    width: 50vw; /* Adjust the width for mobile screens */
+  }
+  
+  .category-details-pane {
+    left: 50vw; /* Align with the width of .left-sidebar */
+    width: 100%; /* Keep the width at 100% of the parent element */
+    transform: translateX(-50vw); /* Hide completely to the left */
+  }
+}

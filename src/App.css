@@ -1,0 +1,49 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the container takes at least the full height of the viewport */
+}
+
+.content-container {
+  display: flex;
+  width: 100%; /* Ensure it takes the full width */
+  max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+  margin: 0;
+  padding: 0;
+  flex-direction: row; /* Align children (.left-sidebar and .MainContent) side by side */
+}
+
+.left-sidebar {
+  flex: 0 0 20%; /* Do not grow, do not shrink, start at 20% width of the parent */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  /* Add other necessary styles if needed */
+}
+
+.MainContent {
+  flex: 1 1 80%; /* Allows it to grow and shrink as needed, start with 80% of the parent's width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  overflow-x: hidden; /* Prevents horizontal overflow */
+  /* Add other necessary styles if needed */
+}
+
+/* Media query for small screens (e.g., tablets or small desktops) */
+@media (max-width: 768px) {
+  .left-sidebar {
+    flex: 0 0 30%; /* 30% of the parent's width */
+  }
+  
+  .MainContent {
+    flex: 1 1 70%; /* 70% of the parent's width */
+  }
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+  .left-sidebar {
+    flex: 0 0 50%; /* 50% of the parent's width */
+  }
+  
+  .MainContent {
+    flex: 1 1 50%; /* 50% of the parent's width */
+  }
+}

@@ -1,0 +1,16 @@
+/* src/pages/AboutPage.css */
+.about-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .about-page h2 {
+    color: #333;
+  }
+  
+  .about-page p {
+    line-height: 1.5;
+    color: #666;
+  }
+  
